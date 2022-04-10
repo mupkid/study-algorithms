@@ -4,17 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.ohx</groupId>
     <artifactId>study-algorithms</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>nowcoder-huawei</module>
         <module>atguigu-mianshi</module>
         <module>leetcode</module>
-        <module>nowcoder-normal</module>
         <module>mi-oj</module>
         <module>mishizhinan</module>
+        <module>nowcoder</module>
+        <module>coding-interviews</module>
     </modules>
 
     <properties>
