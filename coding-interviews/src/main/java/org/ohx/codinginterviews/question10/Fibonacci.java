@@ -2,6 +2,7 @@ package org.ohx.codinginterviews.question10;
 
 /**
  * 面试题10：斐波那契数列
+ * <p>
  * 输入n，求斐波那契数列的第n项
  *
  * @author mudkip
@@ -15,14 +16,14 @@ public class Fibonacci {
      * @param n 输入
      * @return 斐波那契数列的第n项
      */
-    public static long fibonacci1(long n) {
+    public static long solution1(long n) {
         if (n <= 0) {
             return 0;
         }
         if (n == 1) {
             return 1;
         }
-        return fibonacci1(n - 1) + fibonacci1(n - 2);
+        return solution1(n - 1) + solution1(n - 2);
     }
 
     /**
@@ -32,10 +33,9 @@ public class Fibonacci {
      * @param n 输入
      * @return 斐波那契数列的第n项
      */
-    public static long fibonacci2(int n) {
-        int[] result = {0, 1};
+    public static long soulution2(int n) {
         if (n < 2) {
-            return result[n];
+            return n;
         }
         long fibMinus1 = 1;
         long fibMinus2 = 0;
