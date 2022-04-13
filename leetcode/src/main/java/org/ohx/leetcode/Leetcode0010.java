@@ -1,4 +1,4 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
 /**
  * 给你一个字符串s和一个字符规律p，请你来实现一个支持 '.'和'*'的正则表达式匹配。
@@ -43,7 +43,7 @@ package com.example.leetcode;
  * 链接：https://leetcode-cn.com/problems/regular-expression-matching
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Leetcode10 {
+public class Leetcode0010 {
     public boolean isMatch(String s, String p) {
         int m = s.length();
         int n = p.length();

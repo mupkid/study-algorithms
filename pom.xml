@@ -15,6 +15,7 @@
         <module>mishizhinan</module>
         <module>nowcoder</module>
         <module>coding-interviews</module>
+        <module>algorithms-common</module>
     </modules>
 
     <properties>

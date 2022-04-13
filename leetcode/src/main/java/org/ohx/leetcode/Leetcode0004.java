@@ -1,4 +1,4 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
 
 import java.util.Arrays;
@@ -42,7 +42,7 @@ import java.util.Arrays;
  * @author haoxian, ou
  * @date 2021/3/12 7:34
  */
-public class Leetcode4 {
+public class Leetcode0004 {
 
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 3};

@@ -1,4 +1,4 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  *
  */
-public class Leetcode8 {
+public class Leetcode0008 {
 
     public int myAtoi(String str) {
         Automaton automaton = new Automaton();

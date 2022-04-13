@@ -1,6 +1,6 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
-public class Leetcode02 {
+public class Leetcode0002 {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;

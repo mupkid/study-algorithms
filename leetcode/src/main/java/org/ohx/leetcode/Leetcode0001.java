@@ -1,9 +1,9 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Leetcode01 {
+public class Leetcode0001 {
 
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>(16);

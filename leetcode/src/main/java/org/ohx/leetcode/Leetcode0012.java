@@ -1,4 +1,4 @@
-package com.example.leetcode;
+package org.ohx.leetcode;
 
 import java.util.Scanner;
 
@@ -48,7 +48,7 @@ import java.util.Scanner;
  * @author mudkip
  * @date 2022/3/17 14:15
  */
-public class Leetcode12 {
+public class Leetcode0012 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(intToRoman(sc.nextInt()));
