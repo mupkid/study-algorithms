@@ -33,7 +33,7 @@ public class FindDuplication {
         // 数组中的数字都在0~n-1的范围内，如果这个数组中没有重复的数字，
         // 那么排序后数字i将出现在下标i的位置
         for (int i = 0; i < numbers.length; i++) {
-            while (numbers[i] != i) {
+            if (numbers[i] != i) {
                 if (numbers[i] == numbers[numbers[i]]) {
                     return numbers[i];
                 }
