@@ -45,4 +45,25 @@ public class FindDuplication {
         }
         return -1;
     }
+
+    /**
+     * 时间O(n)，空间O(n)
+     *
+     * @param numbers int整型一维数组
+     * @return int整型
+     */
+    public static int duplicate2(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return -1;
+        }
+
+        int[] res = new int[numbers.length];
+        for (int number : numbers) {
+            res[number]++;
+            if (res[number] == 2) {
+                return number;
+            }
+        }
+        return -1;
+    }
 }
