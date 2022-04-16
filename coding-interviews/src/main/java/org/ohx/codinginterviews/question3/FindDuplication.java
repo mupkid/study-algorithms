@@ -20,10 +20,10 @@ public class FindDuplication {
      * @return int整型
      */
     public static int duplicate(int[] numbers) {
+        // 不合法输入校验
         if (Objects.isNull(numbers) || numbers.length == 0) {
             return -1;
         }
-
         for (int number : numbers) {
             if (number < 0 || number > numbers.length - 1) {
                 return -1;
