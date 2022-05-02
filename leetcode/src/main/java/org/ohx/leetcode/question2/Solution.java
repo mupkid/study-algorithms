@@ -1,7 +1,11 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question2;
 
-public class Leetcode0002 {
-
+/**
+ * 两数相加
+ *
+ * @author mudkip
+ */
+public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
         int carry = 0;

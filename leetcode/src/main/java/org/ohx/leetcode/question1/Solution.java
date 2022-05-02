@@ -1,10 +1,14 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question1;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Leetcode0001 {
-
+/**
+ * 两数之和
+ *
+ * @author mudkip
+ */
+public class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>(16);
         for (int i = 0; i < nums.length; i++) {
