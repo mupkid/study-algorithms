@@ -28,7 +28,14 @@ public class Power {
         if (exponent == 1) {
             return base;
         }
-        return recursionPow(base, exponent / 2) * recursionPow(base, exponent - exponent / 2);
+
+        double result = recursionPow(base, exponent >> 1);
+        result *= result;
+        if ((exponent & 1) == 1) {
+            result *= base;
+        }
+
+        return result;
     }
 
     /**
