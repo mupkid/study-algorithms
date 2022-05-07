@@ -7,6 +7,8 @@ package org.ohx.codinginterviews.question17;
  * 打印出1、2、3一直到最大的3位数即999。
  * <p>
  * 牛客网版本
+ * 1. 用返回一个整数列表来代替打印
+ * 2. n 为正整数，0 < n <= 5
  *
  * @author mudkip
  * @date 2022/5/2
