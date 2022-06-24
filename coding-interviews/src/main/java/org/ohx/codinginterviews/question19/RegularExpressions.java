@@ -12,6 +12,39 @@ package org.ohx.codinginterviews.question19;
  */
 public class RegularExpressions {
     public static boolean match(String str, String pattern) {
+        if (str == null || pattern == null) {
+            return false;
+        }
+
+        return matchCore(str, 0, pattern, 0);
+    }
+
+    private static boolean matchCore(String str, int strIndex, String pattern, int patternIndex) {
+        if (strIndex == str.length() && patternIndex == pattern.length()) {
+            return true;
+        }
+        // 模式串比文本串先到末尾，肯定没有匹配成功
+        if (strIndex < str.length() && patternIndex == pattern.length()) {
+            return false;
+        }
+
+        // 剩下两种情况：1、模式和文本都没有到结尾；2、文本到了结尾而模板还没有到结尾
+        // 第2个字符是*
+        if (patternIndex < pattern.length() - 1 && pattern.charAt(patternIndex + 1) == '*') {
+            if (pattern.charAt(patternIndex) == str.charAt(strIndex) || pattern.charAt(patternIndex) == '.') {
+                return matchCore(str, strIndex + 1, pattern, patternIndex + 2)
+                        || matchCore(str, strIndex + 1, pattern, patternIndex)
+                        || matchCore(str, strIndex, pattern, patternIndex + 2);
+            } else {
+                return matchCore(str, strIndex, pattern, patternIndex + 2);
+            }
+        }
+
+        if ((strIndex < str.length() && str.charAt(strIndex) == pattern.charAt(patternIndex))
+                || (strIndex < str.length() && pattern.charAt(patternIndex) == '.')) {
+            return matchCore(str, strIndex + 1, pattern, patternIndex + 1);
+        }
+
         return false;
     }
 }
