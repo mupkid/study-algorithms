@@ -29,11 +29,7 @@ public class Solution {
 
     public boolean HasSubtree(TreeNode root1, TreeNode root2) {
         // 空树
-        if (root2 == null) {
-            return false;
-        }
-        // 一个为空，另一个不为空
-        if (root1 == null) {
+        if (root1 == null || root2 == null) {
             return false;
         }
         //递归比较
