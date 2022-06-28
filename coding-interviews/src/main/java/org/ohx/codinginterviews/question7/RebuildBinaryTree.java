@@ -52,7 +52,7 @@ public class RebuildBinaryTree {
         // 前序遍历第一个数字，就是当前的根节点
         E rootValue = pre[preStart];
         int i = map.get(rootValue);
-        return new BinaryTreeNode<>(construct(pre, preStart + 1, preStart + i - vinStart, vin, vinStart, i - 1, map),
-                construct(pre, preStart + 1 + i - vinStart, preEnd, vin, i + 1, vinEnd, map), rootValue);
+        return new BinaryTreeNode<>(rootValue, construct(pre, preStart + 1, preStart + i - vinStart, vin, vinStart, i - 1, map),
+                construct(pre, preStart + 1 + i - vinStart, preEnd, vin, i + 1, vinEnd, map));
     }
 }

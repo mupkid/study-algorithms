@@ -27,12 +27,14 @@ public class BinaryTreeNode<E> {
 
     public BinaryTreeNode(E value) {
         this.value = value;
+        this.leftChild = null;
+        this.rightChild = null;
     }
 
-    public BinaryTreeNode(BinaryTreeNode<E> leftChild, BinaryTreeNode<E> rightChild, E value) {
+    public BinaryTreeNode(E value, BinaryTreeNode<E> leftChild, BinaryTreeNode<E> rightChild) {
+        this.value = value;
         this.leftChild = leftChild;
         this.rightChild = rightChild;
-        this.value = value;
     }
 
     public BinaryTreeNode<E> getLeftChild() {
