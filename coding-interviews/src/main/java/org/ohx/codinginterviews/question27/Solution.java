@@ -19,7 +19,7 @@ public class Solution {
             return null;
         }
         // 辅助栈
-        Stack<TreeNode> s = new Stack<TreeNode>();
+        Stack<TreeNode> s = new Stack<>();
         // 根节点先进栈
         s.push(pRoot);
         while (!s.isEmpty()) {
