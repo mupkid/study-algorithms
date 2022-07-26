@@ -10,6 +10,12 @@ import java.util.Objects;
  * @date 2022/6/28
  */
 public class MirrorOfBinaryTree {
+    /**
+     * 递归实现
+     *
+     * @param node
+     * @param <E>
+     */
     public <E> void mirrorRecursively(BinaryTreeNode<E> node) {
         if (Objects.isNull(node)) {
             return;
