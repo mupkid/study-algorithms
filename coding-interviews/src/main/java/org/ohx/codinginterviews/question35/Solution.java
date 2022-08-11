@@ -5,29 +5,32 @@ package org.ohx.codinginterviews.question35;
  * @date 2022/8/7
  */
 public class Solution {
-    public Node copyRandomList(Node head) {
-        if (head == null) {
+    public RandomListNode Clone(RandomListNode pHead) {
+        if (pHead == null) {
             return null;
         }
 
-        Node cur = head;
+        // 第一步：遍历原始链表，开始复制
+        RandomListNode cur = pHead;
         while (cur != null) {
-            Node node = new Node(cur.val);
+            RandomListNode node = new RandomListNode(cur.label);
             node.next = cur.next;
             cur.next = node;
             cur = node.next;
         }
 
-        cur = head;
+        // 第二步：连接新链表的random节点
+        cur = pHead;
         while (cur != null) {
             cur.next.random = cur.random == null ? null : cur.random.next;
             cur = cur.next.next;
         }
 
-        Node copy = head.next;
-        cur = head;
+        // 第三步：双指针，拆分链表
+        RandomListNode copy = pHead.next;
+        cur = pHead;
         while (cur != null) {
-            Node next = cur.next;
+            RandomListNode next = cur.next;
             cur.next = next.next;
             next.next = next.next == null ? null : next.next.next;
             cur = cur.next;
@@ -36,14 +39,12 @@ public class Solution {
     }
 }
 
-class Node {
-    int val;
-    Node next;
-    Node random;
+class RandomListNode {
+    int label;
+    RandomListNode next = null;
+    RandomListNode random = null;
 
-    public Node(int val) {
-        this.val = val;
-        this.next = null;
-        this.random = null;
+    RandomListNode(int label) {
+        this.label = label;
     }
 }
