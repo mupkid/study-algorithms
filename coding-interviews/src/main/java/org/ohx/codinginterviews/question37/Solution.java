@@ -1,6 +1,8 @@
 package org.ohx.codinginterviews.question37;
 
+import java.util.LinkedList;
 import java.util.Objects;
+import java.util.Queue;
 
 /**
  * 牛客网版本：JZ37 序列化二叉树
@@ -19,63 +21,69 @@ import java.util.Objects;
  */
 public class Solution {
     /**
-     * 序列的下标
+     * 使用层序遍历序列化
+     * 每个节点用","分割，null用“#”表示，而根节点为null时，返回空字符串
+     *
+     * @param root
+     * @return
      */
-    private int index = 0;
-
-    private void SerializeFunction(TreeNode root, StringBuilder str) {
-        //如果节点为空，表示左子节点或右子节点为空，用#表示
-        if (root == null) {
-            str.append('#');
-            return;
-        }
-        // 根节点
-        str.append(root.val).append('!');
-        // 左子树
-        SerializeFunction(root.left, str);
-        // 右子树
-        SerializeFunction(root.right, str);
-    }
-
     public String Serialize(TreeNode root) {
-        // 处理空树
-        if (root == null) {
-            return "#";
+        if (Objects.isNull(root)) {
+            return "";
         }
-        StringBuilder res = new StringBuilder();
-        SerializeFunction(root, res);
-        // 把str转换成char
-        return res.toString();
+
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (Objects.isNull(node)) {
+                sb.append("#").append(",");
+                continue;
+            }
+            sb.append(node.val).append(",");
+            queue.offer(node.left);
+            queue.offer(node.right);
+        }
+
+        return sb.toString();
     }
 
-    private TreeNode DeserializeFunction(String str) {
-        // 到达叶节点时，构建完毕，返回继续构建父节点
-        // 空节点
-        if (str.charAt(index) == '#') {
-            index++;
-            return null;
-        }
-        // 数字转换
-        int val = 0;
-        // 遇到分隔符或者结尾
-        while (str.charAt(index) != '!') {
-            val = val * 10 + ((str.charAt(index)) - '0');
-            index++;
-        }
-        TreeNode root = new TreeNode(val);
-        index++;
-        // 反序列化与序列化一致，都是前序
-        root.left = DeserializeFunction(str);
-        root.right = DeserializeFunction(str);
-        return root;
-    }
-
+    /**
+     * 对层序遍历序列化的字符串进行反序列化
+     *
+     * @param str
+     * @return
+     */
     public TreeNode Deserialize(String str) {
-        // 空序列对应空树
-        if (Objects.equals(str, "#")) {
+        if (Objects.isNull(str) || str.length() < 1) {
             return null;
         }
-        return DeserializeFunction(str);
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        String[] nodes = str.split(",");
+        TreeNode root = new TreeNode(Integer.parseInt(nodes[0]));
+        queue.offer(root);
+        int i = 1;
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            // 构建左节点
+            if (!"#".equals(nodes[i])) {
+                TreeNode left = new TreeNode(Integer.parseInt(nodes[i]));
+                node.left = left;
+                queue.offer(left);
+            }
+            i++;
+            // 构建右节点
+            if (!"#".equals(nodes[i])) {
+                TreeNode right = new TreeNode(Integer.parseInt(nodes[i]));
+                node.right = right;
+                queue.offer(right);
+            }
+            i++;
+        }
+
+        return root;
     }
 }
 
