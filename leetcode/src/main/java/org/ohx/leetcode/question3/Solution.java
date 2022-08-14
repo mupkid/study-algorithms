@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question3;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -35,7 +35,7 @@ import java.util.Set;
  * @author haoxian, ou
  * @date 2021/3/3 22:06
  */
-public class Leetcode0003 {
+public class Solution {
 
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
