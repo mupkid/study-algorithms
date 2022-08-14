@@ -24,5 +24,5 @@
 
 相关标签：`数组` `哈希表` `分治` `计数` `排序` 
 
-## 摩尔排序法
+## 1 摩尔排序法
 [摩尔排序法过程可视化](https://www.cs.utexas.edu/users/moore/best-ideas/mjrty/index.html)
