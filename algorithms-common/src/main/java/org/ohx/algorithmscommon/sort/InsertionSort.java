@@ -17,14 +17,24 @@ public class InsertionSort {
         for (int i = 1; i < length; i++) {
             int value = a[i];
             int j = i - 1;
-            for (; j >= 0; j--) {
-                if (value < a[j]) {
-                    a[j + 1] = a[j];
-                } else {
-                    break;
-                }
+            while (j >= 0 && a[j] > value) {
+                a[j + 1] = a[j];
+                j--;
             }
             a[j + 1] = value;
+        }
+    }
+
+    public static void insertSort(int[] a) {
+        int length = a.length;
+        for (int i = 2; i < length; i++) {
+            int j;
+            // 哨兵
+            a[0] = a[i];
+            for (j = i - 1; a[j] > a[0]; j--) {
+                a[j + 1] = a[j];
+            }
+            a[j + 1] = a[0];
         }
     }
 }
