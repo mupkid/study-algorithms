@@ -15,6 +15,7 @@
         <module>nowcoder</module>
         <module>coding-interviews</module>
         <module>algorithms-common</module>
+        <module>crack-coding-interview</module>
     </modules>
 
     <properties>
