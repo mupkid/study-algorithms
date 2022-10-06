@@ -1,13 +1,12 @@
-package org.ohx.nowcoder.huawei;
+package org.ohx.nowcoder.HJ6;
 
 import java.util.Scanner;
 
 /**
- * 输入一个正整数，按照从小到大的顺序输出它的所有质因子（重复的也要列举）（如180的质因子为2 2 3 3 5 ）
- * 最后一个数后面也要有空格
+ * @author mudkip
+ * @date 2022/10/6
  */
-public class PrimeFactor {
-
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         long number = sc.nextLong();
@@ -18,6 +17,6 @@ public class PrimeFactor {
                 System.out.print(i + " ");
             }
         }
-        System.out.print(number<=1?"":number+" ");
+        System.out.print(number <= 1 ? "" : number + " ");
     }
 }

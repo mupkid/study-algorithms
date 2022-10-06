@@ -1,15 +1,15 @@
-package org.ohx.nowcoder.huawei;
+package org.ohx.nowcoder.HJ5;
 
 import java.util.Scanner;
 
 /**
- * 接受一个十六进制的数，输出该数值的十进制表示。
+ * @author mudkip
+ * @date 2022/10/6
  */
-public class HexToDec {
-
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNext()){
+        while (scanner.hasNext()) {
             String s = scanner.next().substring(2);
             System.out.println(Long.parseLong(s, 16));
         }

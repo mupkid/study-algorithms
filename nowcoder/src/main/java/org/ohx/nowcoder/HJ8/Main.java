@@ -1,11 +1,14 @@
-package org.ohx.nowcoder.huawei;
+package org.ohx.nowcoder.HJ8;
 
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class MergeTable {
-
+/**
+ * @author mudkip
+ * @date 2022/10/6
+ */
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
