@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC4;
 
 /**
  * 判断链表是否有环

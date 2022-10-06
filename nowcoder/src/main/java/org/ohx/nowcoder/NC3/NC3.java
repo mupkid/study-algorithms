@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC3;
 
 /**
  * 链表中环的入口节点

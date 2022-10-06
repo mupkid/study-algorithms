@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC6;
 
 /**
  * 二叉树最大路径和

@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC2;
 
 import java.util.ArrayList;
 import java.util.List;

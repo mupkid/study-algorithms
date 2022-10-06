@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC5;
 
 /**
  * 二叉树根节点到叶子节点的所有路径

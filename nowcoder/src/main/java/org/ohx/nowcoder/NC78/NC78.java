@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC78;
 
 /**
  * 输入一个链表，反转链表后，输出新链表的表头。

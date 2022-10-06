@@ -1,4 +1,4 @@
-package org.ohx.nowcoder.normal;
+package org.ohx.nowcoder.NC1;
 
 import java.math.BigInteger;
 import java.util.Stack;
