@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question8;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  *
  */
-public class Leetcode0008 {
+public class Solution {
 
     public int myAtoi(String str) {
         Automaton automaton = new Automaton();

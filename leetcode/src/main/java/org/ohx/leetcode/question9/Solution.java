@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question9;
 
 /**
  * 给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
@@ -9,7 +9,7 @@ package org.ohx.leetcode;
  * <p>
  * 进阶：你能不将整数转为字符串来解决这个问题吗？
  */
-public class Leetcode0009 {
+public class Solution {
 
     public boolean isPalindrome(int x) {
         // 负数或者个位为0的数不是回文数

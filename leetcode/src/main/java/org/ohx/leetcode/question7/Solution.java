@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question7;
 
 /**
  * 给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
@@ -27,7 +27,7 @@ package org.ohx.leetcode;
  * <p>
  * Related Topics 数学
  */
-public class Leetcode0007 {
+public class Solution {
 
     public int reverse(int x) {
         int res = 0;

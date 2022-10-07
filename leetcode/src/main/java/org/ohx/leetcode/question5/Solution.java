@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.List;
  * <p>
  * Related Topics 字符串 动态规划
  */
-public class Leetcode0005 {
+class Solution {
 
     public static void main(String[] args) {
         // System.out.println(longestPalindrome3("babab"));

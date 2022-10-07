@@ -1,4 +1,4 @@
-package org.ohx.leetcode;
+package org.ohx.leetcode.question6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +38,7 @@ import java.util.List;
  * <p>
  * Related Topics 字符串
  */
-public class Leetcode0006 {
+class Solution {
 
     public static void main(String[] args) {
         System.out.println(convert2("leetcode", 3));
