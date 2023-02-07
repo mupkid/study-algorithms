@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public class Solution {
     public List<String> alertNames(String[] keyName, String[] keyTime) {
-        Map<String, List<String>> map = new HashMap<>(keyName.length);
+        Map<String, List<String>> map = new HashMap<>();
         for (int i = 0; i < keyName.length; i++) {
             map.computeIfAbsent(keyName[i], s -> new ArrayList<>()).add(keyTime[i]);
         }
