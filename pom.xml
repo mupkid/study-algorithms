@@ -16,7 +16,7 @@
         <module>coding-interviews</module>
         <module>algorithms-common</module>
         <module>crack-coding-interview</module>
-        <module>huawei-oj</module>
+<!--        <module>huawei-oj</module>-->
     </modules>
 
     <properties>
