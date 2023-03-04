@@ -1,4 +1,4 @@
-package org.ohx.crackcodeinterview.question1709;
+package org.ohx.crackcodeinterview.problem1709;
 
 /**
  * @author mudkip
