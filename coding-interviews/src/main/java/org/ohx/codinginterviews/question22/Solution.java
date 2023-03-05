@@ -19,7 +19,6 @@ public class Solution {
      * @return ListNode类
      */
     public ListNode FindKthToTail(ListNode pHead, int k) {
-        int n = 0;
         ListNode fast = pHead;
         ListNode slow = pHead;
         // 快指针先行k步

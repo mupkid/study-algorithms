@@ -3,6 +3,8 @@
 
 标签：`链表`
 
+[力扣](https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)
+
 ## 总结
 **难度**：简单
 
