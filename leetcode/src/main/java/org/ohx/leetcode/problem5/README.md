@@ -1,46 +1,23 @@
-package org.ohx.leetcode.question5;
+# [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)
 
-import java.util.ArrayList;
-import java.util.List;
+> 给你一个字符串 s，找到 s 中最长的回文子串。
+>
+> 如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
 
-/**
- * 给你一个字符串 s，找到 s 中最长的回文子串。
- * <p>
- * 示例 1：
- * 输入：s = "babad"
- * 输出："bab"
- * 解释："aba" 同样是符合题意的答案。
- * <p>
- * 示例 2：
- * 输入：s = "cbbd"
- * 输出："bb"
- * <p>
- * 示例 3：
- * 输入：s = "a"
- * 输出："a"
- * <p>
- * 示例 4：
- * 输入：s = "ac"
- * 输出："a"
- * <p>
- * 提示：
- * 1 <= s.length <= 1000
- * s 仅由数字和英文字母（大写和/或小写）组成
- * <p>
- * Related Topics 字符串 动态规划
- */
+提示：
+
+* 1 <= s.length <= 1000
+* s 仅由数字和英文字母（大写和/或小写）组成
+
+标签：`字符串` `动态规划`
+
+## 1 暴力
+
+* 时间复杂度O(n^3)
+* 空间复杂度O(1)
+
+```java
 class Solution {
-
-    public static void main(String[] args) {
-        // System.out.println(longestPalindrome3("babab"));
-        System.out.println(longestPalindrome4("aacabdkacaa"));
-    }
-
-    /**
-     * 暴力解法
-     * 时间复杂度O(n^3)
-     * 空间复杂度O(1)
-     */
     public static String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {
@@ -75,16 +52,19 @@ class Solution {
         }
         return true;
     }
+}
+```
 
-    /**
-     * 中心扩散
-     * 枚举所有可能的回文子串的中心位置
-     * 中心位置可能是一个字符，也有可能是两个相邻的字符
-     * 记录最长回文子串的相关变量
-     * 时间复杂度O(n^2) 枚举中心位置的个数是2(n-1)，每一边向两边扩散检测是否是回文
-     * 空间复杂度O(1)
-     */
-    public static String longestPalindrome2(String s) {
+## 2 中心扩散
+
+枚举所有可能的回文子串的中心位置，中心位置可能是一个字符，也有可能是两个相邻的字符，记录最长回文子串的相关变量
+
+* 时间复杂度O(n^2) 枚举中心位置的个数是2(n-1)，每一边向两边扩散检测是否是回文
+* 空间复杂度O(1)
+
+```java
+class Solution {
+    public static String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {
             return s;
@@ -133,21 +113,24 @@ class Solution {
         // 回文串长度是 j-i+1-2 = j-i-1
         return j - i - 1;
     }
+}
+```
 
-    /**
-     * 动态规划
-     * 回文串天然具有状态转移特性，因为回文串去掉两头仍然是回文串
-     * 定义P(i,j)表示字符串s的第i到j个字母组成的串s[i..j]是否为回文串，写出状态转移方程
-     * P(i,j) = P(i+1,j-1) && (s[i]==s[j]) (j-i >= 2)
-     * 边界条件：子串长度为1或2
-     * 得 P(i,i) = true, P(i, i+1) = (s[i] == s[i+1])
-     * <p>
-     * 时间复杂度：O(n^2)
-     * 空间复杂度：O(n^2)
-     * 动态规划枚举的子串个数：O(n^2)
-     * 中心扩散枚举的子串个数：O(2n)
-     */
-    public static String longestPalindrome3(String s) {
+## 3 动态规划
+
+回文串天然具有状态转移特性，因为回文串去掉两头仍然是回文串
+
+定义 P(i,j) 表示字符串 s 的第 i 到 j 个字母组成的串 s[i..j] 是否为回文串，写出状态转移方程 P(i,j) = P(i+1,j-1) && (s[i]==s[j]) (j-i >= 2)
+边界条件：子串长度为1或2 得 P(i,i) = true, P(i, i+1) = (s[i] == s[i+1])
+
+* 时间复杂度：O(n^2)
+* 空间复杂度：O(n^2)
+* 动态规划枚举的子串个数：O(n^2)
+* 中心扩散枚举的子串个数：O(2n)
+
+```java
+class Solution {
+    public static String longestPalindrome(String s) {
         int len = s.length();
         boolean[][] dp = new boolean[len][len];
         int begin = 0, subLen = 0;
@@ -173,11 +156,14 @@ class Solution {
         }
         return s.substring(begin, begin + subLen);
     }
+}
+```
 
-    /**
-     * 动态规划另一种写法
-     */
-    public static String longestPalindrome4(String s) {
+另一种写法
+
+```java
+class Solution {
+    public static String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {
             return s;
@@ -208,14 +194,18 @@ class Solution {
         }
         return s.substring(begin, begin + maxLen);
     }
+}
+```
 
-    /**
-     * Manacher算法
-     * 专门用于查找最长回文子串的算法
-     * <p>
-     * 时间复杂度O(n)
-     */
-    public static String longestPalindrome5(String s) {
+## 4 Manacher算法
+
+专门用于查找最长回文子串的算法
+
+* 时间复杂度O(n)
+
+```java
+class Solution {
+    public static String longestPalindrome(String s) {
         int start = 0, end = -1;
         StringBuffer t = new StringBuffer("#");
         for (int i = 0; i < s.length(); ++i) {
@@ -263,5 +253,5 @@ class Solution {
         }
         return (right - left - 2) / 2;
     }
-
 }
+```
