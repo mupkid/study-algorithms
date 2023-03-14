@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question1710;
+package org.ohx.leetcode.problem1710;
 
 import java.util.Arrays;
 

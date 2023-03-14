@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question1694;
+package org.ohx.leetcode.problem1694;
 
 /**
  * @author mudkip

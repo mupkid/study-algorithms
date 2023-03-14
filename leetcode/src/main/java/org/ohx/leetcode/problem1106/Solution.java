@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question1106;
+package org.ohx.leetcode.problem1106;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question1441;
+package org.ohx.leetcode.problem1441;
 
 import java.util.ArrayList;
 import java.util.List;
