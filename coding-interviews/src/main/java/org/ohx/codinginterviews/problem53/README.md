@@ -1,3 +1,5 @@
+# 面试题53（一）
+
 [力扣 剑指 Offer 53 - I. 在排序数组中查找数字 I](https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/)
 
 ```java
@@ -28,6 +30,7 @@ public int search(int[] nums, int target) {
 ```
 
 相当于第一个 target + 1 的下标减去第一个 target 的下标的值。
+
 ```java
 class Solution {
     private int lowerBound(int[] a, int x) {
@@ -50,6 +53,8 @@ class Solution {
     }
 }
 ```
+
+# 面试题53（二）
 
 [力扣 剑指 Offer 53 - II. 0～n-1中缺失的数字](https://leetcode.cn/problems/que-shi-de-shu-zi-lcof/)
 
