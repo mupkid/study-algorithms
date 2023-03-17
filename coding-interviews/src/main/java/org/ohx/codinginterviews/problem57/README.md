@@ -4,6 +4,8 @@
 
 同[力扣167](../../../../../../../../leetcode/src/main/java/org/ohx/leetcode/problem167)
 
+标签：`双指针` `二分`
+
 ## 1 双指针
 
 ```java
@@ -26,6 +28,8 @@ class Solution {
     }
 }
 ```
+
+如果数字过大时，加法会溢出。
 
 ## 2 二分
 
