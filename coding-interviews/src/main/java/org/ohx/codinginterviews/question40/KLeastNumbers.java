@@ -6,5 +6,6 @@ package org.ohx.codinginterviews.question40;
  */
 public class KLeastNumbers {
     public int[] getLeastNumbers(int[] numbers, int k) {
+        return new int[2];
     }
 }
