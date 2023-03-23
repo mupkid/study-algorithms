@@ -38,7 +38,7 @@ class Solution {
     public List<Boolean> checkArithmeticSubarrays(int[] nums, int[] l, int[] r) {
         List<Boolean> result = new ArrayList<>();
         for (int i = 0; i < l.length; ++i) {
-            result.add(check(nums, l[i], r[i]));
+            result.add(isDifferentialSequence(nums, l[i], r[i]));
         }
         return result;
     }
