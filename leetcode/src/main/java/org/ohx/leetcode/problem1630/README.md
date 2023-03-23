@@ -43,34 +43,37 @@ class Solution {
         return result;
     }
 
-    private boolean check(int[] nums, int l, int r) {
+    private Boolean isDifferentialSequence(int[] nums, int l, int r) {
+        if (r - l < 2) {
+            return Boolean.TRUE;
+        }
         int min = (int) 1e9, max = -(int) 1e9;
         for (int i = l; i <= r; ++i) {
             min = Math.min(min, nums[i]);
             max = Math.max(max, nums[i]);
         }
         if (min == max) {
-            return true;
+            return Boolean.TRUE;
         }
         if ((max - min) % (r - l) != 0) {
             // 最大最小值之间不能平分
-            return false;
+            return Boolean.FALSE;
         }
         int d = (max - min) / (r - l);
         boolean[] dict = new boolean[r - l + 1];
         for (int i = l; i <= r; ++i) {
             if ((nums[i] - min) % d != 0) {
                 // 差不对
-                return false;
+                return Boolean.FALSE;
             }
             int j = (nums[i] - min) / d;
             if (dict[j]) {
                 // 有重复的数
-                return false;
+                return Boolean.FALSE;
             }
             dict[j] = true;
         }
-        return true;
+        return Boolean.TRUE;
     }
 }
 ```
