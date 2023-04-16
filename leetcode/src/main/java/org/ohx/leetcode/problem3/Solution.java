@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question3;
+package org.ohx.leetcode.problem3;
 
 import java.util.HashMap;
 import java.util.HashSet;
