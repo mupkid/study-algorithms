@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question136;
+package org.ohx.leetcode.problem136;
 
 /**
  * 136：只出现一次的数字
