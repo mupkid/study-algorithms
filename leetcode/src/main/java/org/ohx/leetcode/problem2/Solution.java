@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question2;
+package org.ohx.leetcode.problem2;
 
 /**
  * 两数相加
