@@ -6,19 +6,14 @@ package org.ohx.leetcode.problem283;
  */
 public class Solution {
     public void moveZeroes(int[] nums) {
-        int n = nums.length, left = 0, right = 0;
-        while (right < n) {
-            if (nums[right] != 0) {
-                swap(nums, left, right);
-                left++;
+        int i0 = 0;
+        for (int i =0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[i0];
+                nums[i0] = nums[i];
+                nums[i] = temp;
+                i0++;
             }
-            right++;
         }
-    }
-
-    public void swap(int[] nums, int left, int right) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
     }
 }
