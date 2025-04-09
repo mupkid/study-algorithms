@@ -1,11 +1,17 @@
-package org.ohx.leetcode.question56;
+# [56. 合并区间](https://leetcode.cn/problems/merge-intervals/)
 
-import java.util.BitSet;
+以数组`intervals`表示若干个区间的集合，其中单个区间为`intervals[i] = [starti, endi]`。
+请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
 
-/**
- * @author mudkip
- * @date 2022/10/6
- */
+## 思路
+
+首先会想到给数组按照左端点排序后，然后判断右端点是否和下一个左端点重合。
+
+## 排序
+
+
+## BitSet
+```java
 class Solution {
     public int[][] merge(int[][] intervals) {
         BitSet bitSet = new BitSet();
@@ -32,3 +38,5 @@ class Solution {
         return ret;
     }
 }
+
+```
