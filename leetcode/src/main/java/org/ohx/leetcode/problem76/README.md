@@ -9,30 +9,34 @@
 
 ```java
 class Solution {
-    public String minWindow(String S, String t) {
-        char[] s = S.toCharArray();
-        int m = s.length;
-        int ansLeft = -1;
-        int ansRight = m;
-        int[] cntS = new int[128]; // s 子串字母的出现次数
+    public String minWindow(String s, String t) {
+        char[] charS = s.toCharArray();
+        int m = charS.length;
+        // 记录答案子串的下标
+        int ansLeft = -1, ansRight = m;
+        int[] cntS = new int[128]; // charS 子串字母的出现次数
         int[] cntT = new int[128]; // t 中字母的出现次数
         for (char c : t.toCharArray()) {
             cntT[c]++;
         }
 
+        // 滑动窗口
         int left = 0;
-        for (int right = 0; right < m; right++) { // 移动子串右端点
-            cntS[s[right]]++; // 右端点字母移入子串
-            while (isCovered(cntS, cntT)) { // 涵盖
-                if (right - left < ansRight - ansLeft) { // 找到更短的子串
-                    ansLeft = left; // 记录此时的左右端点
+        for (int right = 0; right < m; right++) {
+            // 右边字母移入子串
+            cntS[charS[right]]++;
+            while (isCovered(cntS, cntT)) {
+                if (right - left < ansRight - ansLeft) {
+                    // 比记录的更短，记录左右端点
+                    ansLeft = left;
                     ansRight = right;
                 }
-                cntS[s[left]]--; // 左端点字母移出子串
+                // 左边字母移出子串
+                cntS[charS[left]]--;
                 left++;
             }
         }
-        return ansLeft < 0 ? "" : S.substring(ansLeft, ansRight + 1);
+        return ansLeft < 0 ? "" : s.substring(ansLeft, ansRight + 1);
     }
 
     private boolean isCovered(int[] cntS, int[] cntT) {
