@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question169;
+package org.ohx.leetcode.problem169;
 
 /**
  * 169：多数元素
