@@ -8,33 +8,23 @@ import java.util.Objects;
  */
 public class Solution {
     public ListNode reverseBetween(ListNode head, int left, int right) {
-        // 如果 left = 1，相当于翻转链表前n个节点
-        if (left == 1) {
-            return reverseN(head, right);
+        ListNode dummy = new ListNode(-1, head);
+        ListNode p0 = dummy;
+        for (int i = 0; i < left - 1; i++) {
+            p0 = p0.next;
         }
 
-        // 递归往后推，直到问题退化成翻转前n个节点
-        head.next = reverseBetween(head.next, left - 1, right - 1);
-        return head;
-    }
-
-    ListNode reverseN(ListNode head, int n) {
-        if (n <= 1) {
-            return head;
+        ListNode pre = null;
+        ListNode cur = p0.next;
+        for (int i = 0; i < right - left + 1; i++) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-
-        ListNode prev = null;
-        ListNode curr = head;
-        int i = 0;
-        while (Objects.nonNull(curr) && i < n) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-            head.next = curr;
-            i++;
-        }
-        return prev;
+        p0.next.next = cur;
+        p0.next = pre;
+        return dummy.next;
     }
 }
 
