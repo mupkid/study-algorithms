@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question94;
+package org.ohx.leetcode.problem94;
 
 import java.util.*;
 
