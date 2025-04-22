@@ -1,4 +1,4 @@
-package org.ohx.leetcode.question215;
+package org.ohx.leetcode.problem215;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
