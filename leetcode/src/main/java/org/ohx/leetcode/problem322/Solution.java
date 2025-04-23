@@ -2,7 +2,7 @@ package org.ohx.leetcode.problem322;
 
 /**
  * @author mudkip
- * @date 2023/4/6
+ * @since 2023/4/6
  */
 public class Solution {
     public int coinChange(int[] coins, int amount) {
