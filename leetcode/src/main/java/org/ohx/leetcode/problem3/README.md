@@ -6,27 +6,26 @@
 ```java
 class Solution {
     public static int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
         // 哈希集合，记录每个字符是否出现过
-        Set<Character> occ = new HashSet<>();
+        Set<Character> set = new HashSet<>();
         int n = s.length();
         // 右下标，初始值为-1，相当于在字符串的左边界的左侧，还没有移动
-        int rk = -1, ans = 0;
+        int right = -1, ans = 0;
         for (int i = 0; i < n; i++) {
             // i相当于窗口左下标
             if (i != 0) {
                 // 把窗口左边从散列表中删除
-                occ.remove(s.charAt(i - 1));
+                set.remove(s.charAt(i - 1));
             }
-            while (rk + 1 < n && !occ.contains(s.charAt(rk + 1))) {
+            while (right + 1 < n && !set.contains(s.charAt(right + 1))) {
                 // 不断地移动右指针
-                occ.add(s.charAt(rk + 1));
-                ++rk;
+                set.add(s.charAt(++right));
             }
             // 第i到rk个字符是一个极长的无重复字符子串
-            ans = Math.max(ans, rk - i + 1);
+            ans = Math.max(ans, right - i + 1);
         }
         return ans;
     }

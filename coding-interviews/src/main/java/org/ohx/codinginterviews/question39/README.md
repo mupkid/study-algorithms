@@ -8,7 +8,7 @@
 
 [力扣](https://leetcode.cn/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/)
 
-相同题目：[力扣169 多数元素](../../../../../../../../leetcode/src/main/java/org/ohx/leetcode/question169/README.md)
+相同题目：[力扣169 多数元素](../../../../../../../../leetcode/src/main/java/org/ohx/leetcode/problem169/README.md)
 
 ## 1 摩尔排序法
 
