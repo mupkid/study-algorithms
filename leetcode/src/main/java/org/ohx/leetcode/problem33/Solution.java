@@ -14,7 +14,7 @@ public class Solution {
                 low = mid;
             }
         }
-        return high == nums.length || nums[high] != target ? -1 : high;
+        return -1;
     }
 
     /**
@@ -27,11 +27,11 @@ public class Solution {
      */
     private boolean check(int[] nums, int i, int target) {
         int end = nums[nums.length - 1];
-        // 右边是不是连续的
+        // 只关心有序的那一个部分
         return nums[i] > end
                 // 右边不连续，target 如果在  mid 和 end 之间，说明 target 在左边
-                ? nums[i] >= target && target > end
+                ? nums[i] > target && target > end
                 // 右边连续，如果 target 小于 mid 或者 target 大于 end，说明 target 在左边
-                : target > end || target <= nums[i];
+                : target > end || target < nums[i];
     }
 }
